@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e496819-8f04-4eaa-a17f-b3f1c121bb3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Java_Client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/MachineLearning.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Java_Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/src/main/java/com/shgx/client/HelloWorldClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Client/src/main/java/com/shgx/client/MachineLearningClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/src/main/java/com/shgx/client/HelloWorldClientByURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Client/src/main/java/com/shgx/client/MachineLearningClientByURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/src/main/java/com/shgx/server/HelloWorldServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/src/main/resources/proto/helloworld.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../Java_Client/src/main/resources/proto/MachineLearning.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/client/HelloWorldClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/client/HelloWorldClientByURL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterBaseDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterBlockingStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterFileDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterFutureStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterImplBase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterMethodDescriptorSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$GreeterStub.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc$MethodHandlers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/GreeterGrpc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloReply$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloReply$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloReply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloReplyOrBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloRequest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloRequest$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloRequestOrBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloWorldServiceProto$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/grpc/HelloWorldServiceProto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/server/HelloWorldServer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/server/HelloWorldServer$GreeterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/com/shgx/server/HelloWorldServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/classes/proto/helloworld.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/grpc-java/com/shgx/grpc/GreeterGrpc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/java/com/shgx/grpc/HelloReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/java/com/shgx/grpc/HelloReplyOrBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/java/com/shgx/grpc/HelloRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/java/com/shgx/grpc/HelloRequestOrBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java_Client/target/generated-sources/protobuf/java/com/shgx/grpc/HelloWorldServiceProto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python_Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_Server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/HelloWorld_Client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/helloworld.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/helloworld_pb2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/helloworld_pb2_grpc.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/HelloWorld_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/MachineLearningServer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/MachineLearningServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="31" column="11" lean-forward="true" selection-start-line="11" selection-end-line="31" selection-end-column="11" />
+            <state relative-caret-position="189">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#25#36#0" expanded="true" />
               </folding>
@@ -80,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/MachineLearning.proto">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="1" lean-forward="true" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="210">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -129,8 +84,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="91" />
+    <option name="x" value="90" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="950" />
   </component>
@@ -170,7 +125,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -271,15 +226,15 @@
       <updated>1578029680802</updated>
       <workItem from="1578029683535" duration="592000" />
       <workItem from="1578030315417" duration="4414000" />
-      <workItem from="1583845035309" duration="5157000" />
+      <workItem from="1583845035309" duration="6426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10163000" />
+    <option name="totallyTimeSpent" value="11432000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="69" width="1680" height="950" extended-state="0" />
+    <frame x="90" y="23" width="1680" height="950" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15628816" />
@@ -287,7 +242,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3041958" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3041958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -345,6 +300,13 @@
     <entry file="file://$PROJECT_DIR$/example/MachineLearning_pb2.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/MachineLearning.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/WebService.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -354,18 +316,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/MachineLearningServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="31" column="11" lean-forward="true" selection-start-line="11" selection-end-line="31" selection-end-column="11" />
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#25#36#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/MachineLearning.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="1" lean-forward="true" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
