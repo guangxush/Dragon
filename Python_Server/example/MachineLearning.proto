@@ -1,0 +1,18 @@
+syntax = "proto3";
+package example;
+
+// The machine learning service definition.
+service MachineLearning {
+  // Sends a machine learning result
+  rpc StartLearn (SendRequest) returns (GetReply) {}
+}
+
+// The request message containing the params.
+message SendRequest {
+  string param = 1;
+}
+
+// The response message containing the results
+message GetReply {
+  string result = 1;
+}
