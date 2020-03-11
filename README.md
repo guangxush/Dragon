@@ -8,7 +8,7 @@ Python服务端将服务直接注册到gRPC注册中心，Java客户端通过端
 
 0. 安装依赖
 
-Python依赖: ```pipinstall grpcio / pipinstall grpcio-tls```
+Python依赖: ```pip install grpcio / pip install grpcio-tls```
 
 Java Project在maven中加入相关的依赖：
 ```xml
@@ -28,6 +28,8 @@ Java Project在maven中加入相关的依赖：
     <version>1.15.0</version>
 </dependency>
 ```
+
+Python客户端：
 
 1. 编写MachineLearning.proto,并执行
 
@@ -80,7 +82,9 @@ if __name__ == '__main__':
     serve()
 ```
 
-3. 编写helloworld.proto参数与2保持一致，然后通过maven进行编译
+Java服务端：
+
+3. resources/proto目录下编写MachineLearning.proto参数与步骤1保持一致，然后通过maven proto插件进行编译（注意参数名称与python服务端代码一致，否则无法调用）
 
 ```proto
 syntax = "proto3";
@@ -91,7 +95,7 @@ option java_multiple_files = true;
 
 // The machine learning service definition.
 service MachineLearning {
-    // Sends a greeting
+    // Sends a request
     rpc StartLearn (SendRequest) returns (GetReply) {}
 }
 
@@ -107,25 +111,25 @@ message GetReply {
 ```
 
 
-4. Java客户端代码
+4. Java客户端代码，用于grpc调用Python服务端服务
 
 ```java
-public class HelloWorldClient {
+public class MachineLearningClient {
 
-    private static final Logger logger = Logger.getLogger(HelloWorldClient.class.getName());
+    private static final Logger logger = Logger.getLogger(MachineLearningClient.class.getName());
 
     private final ManagedChannel channel;
-    private final GreeterGrpc.GreeterBlockingStub blockingStub;
+    private final MachineLearningGrpc.MachineLearningBlockingStub blockingStub;
 
     /**
-     * Construct client connecting to HelloWorld server at {@code host:port}.
+     * Construct client connecting to MachineLearning server at {@code host:port}.
      */
-    public HelloWorldClient(String host, int port) {
+    public MachineLearningClient(String host, int port) {
 
         channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext(true)
                 .build();
-        blockingStub = GreeterGrpc.newBlockingStub(channel);
+        blockingStub = MachineLearningGrpc.newBlockingStub(channel);
     }
 
     public void shutdown() throws InterruptedException {
@@ -133,34 +137,33 @@ public class HelloWorldClient {
     }
 
     /**
-     * Say hello to server.
+     * Send params to server.
      */
-    public void greet(String name) {
-        logger.info("Will try to greet " + name + " ...");
-        HelloRequest request = HelloRequest.newBuilder().setName(name).build();
-        HelloReply response;
+    public void connect(String params) {
+        logger.info("Will try to connect " + params + " ...");
+        SendRequest request = SendRequest.newBuilder().setName(params).build();
+        GetReply response;
         try {
-            response = blockingStub.sayHello(request);
+            response = blockingStub.startLearn(request);
         } catch (StatusRuntimeException e) {
             logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
             return;
         }
-        logger.info("Greeting: " + response.getMessage());
+        logger.info("Response Result: " + response.getMessage());
     }
 
     /**
-     * Greet server. If provided, the first element of {@code args} is the name to use in the
-     * greeting.
+     * Machine Learning server. If provided, the first element of {@code args} is the param to send to server.
      */
     public static void main(String[] args) throws Exception {
-        HelloWorldClient client = new HelloWorldClient("localhost", 50051);
+        MachineLearningClient client = new MachineLearningClient("localhost", 50051);
         try {
 
-            String user = "world";
+            String param = "train";
             if (args.length > 0) {
-                user = args[0];
+                param = args[0];
             }
-            client.greet(user);
+            client.connect(param);
         } finally {
             client.shutdown();
         }
@@ -173,13 +176,12 @@ public class HelloWorldClient {
 5. 先启动Python服务端代码，然后启动Java客户端，输出结果
 
 ```text
-hello world
+The model is training!
 ```
-#### 两种方式对比
 
-1. 采用Web服务进行调用，后端对应用的处理线程采用同步阻塞的模型，阻塞的时间取决对方I/O处理的速度和网络I/O传输的速度，两种不同代码之间通过HTTP请求或者JSON封装进行交互，效率较低。
+#### 特点
 
-2. 采用gRPC，有了服务的注册中心，服务切换更新更加轻量化，并且遵循 Netty 的线程分工原则，协议层消息的接收和编解码由Netty 的 I/O(NioEventLoop)线程负责；后续应用层的处理由应用线程负责，防止由于应用处理耗时而阻塞 Netty 的 I/O 线程， 可以通过服务名和方法名调用，直接调用启动的时候注册的服务实例，不需要反射或者JSON编码解码进行调用，性能更优； 不过因为有Netty的线程分工原则，gRPC之间会做频繁的线程切换，如果在一次gRPC调用过程中，做了多次I/O线程到应用线程之间的切换，会导致性能的下降。
+采用gRPC，有了服务的注册中心，服务切换更新更加轻量化，并且遵循 Netty 的线程分工原则，协议层消息的接收和编解码由Netty 的 I/O(NioEventLoop)线程负责；后续应用层的处理由应用线程负责，防止由于应用处理耗时而阻塞 Netty 的 I/O 线程， 可以通过服务名和方法名调用，直接调用启动的时候注册的服务实例，不需要反射或者JSON编码解码进行调用，性能更优； 不过因为有Netty的线程分工原则，gRPC之间会做频繁的线程切换，如果在一次gRPC调用过程中，做了多次I/O线程到应用线程之间的切换，会导致性能的下降。
 
 
 #### 参考文档
