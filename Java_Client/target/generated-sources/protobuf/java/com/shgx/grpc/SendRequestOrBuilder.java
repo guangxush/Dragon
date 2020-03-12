@@ -8,12 +8,12 @@ public interface SendRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string name = 1;</code>
+   * <code>string param = 1;</code>
    */
-  java.lang.String getName();
+  java.lang.String getParam();
   /**
-   * <code>string name = 1;</code>
+   * <code>string param = 1;</code>
    */
   com.google.protobuf.ByteString
-      getNameBytes();
+      getParamBytes();
 }

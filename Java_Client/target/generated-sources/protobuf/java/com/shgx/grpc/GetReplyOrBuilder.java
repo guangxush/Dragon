@@ -8,12 +8,12 @@ public interface GetReplyOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string message = 1;</code>
+   * <code>string result = 1;</code>
    */
-  java.lang.String getMessage();
+  java.lang.String getResult();
   /**
-   * <code>string message = 1;</code>
+   * <code>string result = 1;</code>
    */
   com.google.protobuf.ByteString
-      getMessageBytes();
+      getResultBytes();
 }

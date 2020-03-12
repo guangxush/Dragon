@@ -43,7 +43,7 @@ public class MachineLearningClient {
      */
     public void connect(String params) {
         logger.info("Will try to connect " + params + " ...");
-        SendRequest request = SendRequest.newBuilder().setName(params).build();
+        SendRequest request = SendRequest.newBuilder().setParam(params).build();
         GetReply response;
         try {
             response = blockingStub.startLearn(request);
@@ -51,7 +51,7 @@ public class MachineLearningClient {
             logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
             return;
         }
-        logger.info("Response Result: " + response.getMessage());
+        logger.info("Response Result: " + response.getResult());
     }
 
     /**

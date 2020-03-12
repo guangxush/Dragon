@@ -33,9 +33,9 @@ public final class MachineLearningServiceProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025MachineLearning.proto\022\007example\"\033\n\013Send" +
-      "Request\022\014\n\004name\030\001 \001(\t\"\033\n\010GetReply\022\017\n\007mes" +
-      "sage\030\001 \001(\t2J\n\017MachineLearning\0227\n\nStartLe" +
+      "\n\025MachineLearning.proto\022\007example\"\034\n\013Send" +
+      "Request\022\r\n\005param\030\001 \001(\t\"\032\n\010GetReply\022\016\n\006re" +
+      "sult\030\001 \001(\t2J\n\017MachineLearning\0227\n\nStartLe" +
       "arn\022\024.example.SendRequest\032\021.example.GetR" +
       "eply\"\000B.\n\rcom.shgx.grpcB\033MachineLearning" +
       "ServiceProtoP\001b\006proto3"
@@ -57,13 +57,13 @@ public final class MachineLearningServiceProto {
     internal_static_example_SendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_example_SendRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Param", });
     internal_static_example_GetReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_example_GetReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_example_GetReply_descriptor,
-        new java.lang.String[] { "Message", });
+        new java.lang.String[] { "Result", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

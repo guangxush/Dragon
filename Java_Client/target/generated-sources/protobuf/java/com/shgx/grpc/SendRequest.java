@@ -5,7 +5,7 @@ package com.shgx.grpc;
 
 /**
  * <pre>
- * The request message containing the user's name.
+ * The request message containing the params.
  * </pre>
  *
  * Protobuf type {@code example.SendRequest}
@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SendRequest() {
-    name_ = "";
+    param_ = "";
   }
 
   @java.lang.Override
@@ -57,7 +57,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            param_ = s;
             break;
           }
         }
@@ -84,34 +84,34 @@ private static final long serialVersionUID = 0L;
             com.shgx.grpc.SendRequest.class, com.shgx.grpc.SendRequest.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  public static final int PARAM_FIELD_NUMBER = 1;
+  private volatile java.lang.Object param_;
   /**
-   * <code>string name = 1;</code>
+   * <code>string param = 1;</code>
    */
-  public java.lang.String getName() {
-    java.lang.Object ref = name_;
+  public java.lang.String getParam() {
+    java.lang.Object ref = param_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      name_ = s;
+      param_ = s;
       return s;
     }
   }
   /**
-   * <code>string name = 1;</code>
+   * <code>string param = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getNameBytes() {
-    java.lang.Object ref = name_;
+      getParamBytes() {
+    java.lang.Object ref = param_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      name_ = b;
+      param_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -130,8 +130,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!getParamBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, param_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!getParamBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, param_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -160,8 +160,8 @@ private static final long serialVersionUID = 0L;
     com.shgx.grpc.SendRequest other = (com.shgx.grpc.SendRequest) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getParam()
+        .equals(other.getParam());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PARAM_FIELD_NUMBER;
+    hash = (53 * hash) + getParam().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -270,7 +270,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message containing the user's name.
+   * The request message containing the params.
    * </pre>
    *
    * Protobuf type {@code example.SendRequest}
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      name_ = "";
+      param_ = "";
 
       return this;
     }
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
 
     public com.shgx.grpc.SendRequest buildPartial() {
       com.shgx.grpc.SendRequest result = new com.shgx.grpc.SendRequest(this);
-      result.name_ = name_;
+      result.param_ = param_;
       onBuilt();
       return result;
     }
@@ -374,8 +374,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.shgx.grpc.SendRequest other) {
       if (other == com.shgx.grpc.SendRequest.getDefaultInstance()) return this;
-      if (!other.getName().isEmpty()) {
-        name_ = other.name_;
+      if (!other.getParam().isEmpty()) {
+        param_ = other.param_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -405,71 +405,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object name_ = "";
+    private java.lang.Object param_ = "";
     /**
-     * <code>string name = 1;</code>
+     * <code>string param = 1;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getParam() {
+      java.lang.Object ref = param_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        param_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string param = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getParamBytes() {
+      java.lang.Object ref = param_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        param_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string param = 1;</code>
      */
-    public Builder setName(
+    public Builder setParam(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      name_ = value;
+      param_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string param = 1;</code>
      */
-    public Builder clearName() {
+    public Builder clearParam() {
       
-      name_ = getDefaultInstance().getName();
+      param_ = getDefaultInstance().getParam();
       onChanged();
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string param = 1;</code>
      */
-    public Builder setNameBytes(
+    public Builder setParamBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      name_ = value;
+      param_ = value;
       onChanged();
       return this;
     }

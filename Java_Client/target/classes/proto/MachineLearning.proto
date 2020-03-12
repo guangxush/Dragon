@@ -4,18 +4,18 @@ option java_package = "com.shgx.grpc";
 option java_outer_classname = "MachineLearningServiceProto";
 option java_multiple_files = true;
 
-// The greeting service definition.
+// The machine learning service definition.
 service MachineLearning {
-    // Sends a greeting
+    // Sends a request
     rpc StartLearn (SendRequest) returns (GetReply) {}
 }
 
-// The request message containing the user's name.
+// The request message containing the params.
 message SendRequest {
-    string name = 1;
+    string param = 1;
 }
 
-// The response message containing the greetings
+// The response message containing the results.
 message GetReply {
-    string message = 1;
+    string result = 1;
 }

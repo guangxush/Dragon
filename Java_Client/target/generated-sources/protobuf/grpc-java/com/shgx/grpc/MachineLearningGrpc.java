@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * The greeting service definition.
+ * The machine learning service definition.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -87,14 +87,14 @@ public final class MachineLearningGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The machine learning service definition.
    * </pre>
    */
   public static abstract class MachineLearningImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Sends a greeting
+     * Sends a request
      * </pre>
      */
     public void startLearn(com.shgx.grpc.SendRequest request,
@@ -117,7 +117,7 @@ public final class MachineLearningGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The machine learning service definition.
    * </pre>
    */
   public static final class MachineLearningStub extends io.grpc.stub.AbstractStub<MachineLearningStub> {
@@ -138,7 +138,7 @@ public final class MachineLearningGrpc {
 
     /**
      * <pre>
-     * Sends a greeting
+     * Sends a request
      * </pre>
      */
     public void startLearn(com.shgx.grpc.SendRequest request,
@@ -150,7 +150,7 @@ public final class MachineLearningGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The machine learning service definition.
    * </pre>
    */
   public static final class MachineLearningBlockingStub extends io.grpc.stub.AbstractStub<MachineLearningBlockingStub> {
@@ -171,7 +171,7 @@ public final class MachineLearningGrpc {
 
     /**
      * <pre>
-     * Sends a greeting
+     * Sends a request
      * </pre>
      */
     public com.shgx.grpc.GetReply startLearn(com.shgx.grpc.SendRequest request) {
@@ -182,7 +182,7 @@ public final class MachineLearningGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The machine learning service definition.
    * </pre>
    */
   public static final class MachineLearningFutureStub extends io.grpc.stub.AbstractStub<MachineLearningFutureStub> {
@@ -203,7 +203,7 @@ public final class MachineLearningGrpc {
 
     /**
      * <pre>
-     * Sends a greeting
+     * Sends a request
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.shgx.grpc.GetReply> startLearn(
