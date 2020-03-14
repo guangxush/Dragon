@@ -74,7 +74,7 @@ def get_data(tup):
     response = requests.request("GET", url, headers=headers, params=querystring)
 
     jj = json.loads(response.text)
-    with open('toutiao_cat_data.txt', 'a') as fp:
+    with open('../learn/data/toutiao_cat_data.txt', 'a') as fp:
         for item in jj['data']:
             item = item['content']
             item = item.replace('\"', '"')
@@ -105,7 +105,7 @@ def get_data(tup):
 
 def get_routine():
     global g_count
-    with open('toutiao_cat_data.txt', 'r') as fp:
+    with open('../learn/data/toutiao_cat_data.txt', 'r') as fp:
         ll = fp.readlines()
         g_count = len(ll)
         for l in ll:
