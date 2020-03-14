@@ -139,7 +139,9 @@ dmypy.json
 [Ss]cripts
 pyvenv.cfg
 .venv
+.txt
+.embeddings
+.pkl
 pip-selfcheck.json
 
-/data
 /model
