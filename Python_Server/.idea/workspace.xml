@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e496819-8f04-4eaa-a17f-b3f1c121bb3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/spider/handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/data_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/data_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/layers/callbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/layers/callbacks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/result/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/learn/result/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/result/score.md" beforeDir="false" afterPath="$PROJECT_DIR$/learn/result/score.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +48,9 @@
         <entry file="file://$PROJECT_DIR$/learn/result/result.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="525">
+                <caret line="25" selection-end-line="25" />
+              </first_editor>
               <second_editor>
                 <markdownNavigatorState />
               </second_editor>
@@ -63,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/result/output.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -95,21 +90,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/models.py">
+        <entry file="file://$PROJECT_DIR$/learn/layers/callbacks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="530">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
+              <folding>
+                <element signature="e#24#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/layers/callbacks.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spider/handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3566">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            <state relative-caret-position="118">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding>
-                <element signature="e#24#60#0" expanded="true" />
+                <element signature="e#0#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,13 +165,15 @@
         <option value="$PROJECT_DIR$/learn/layers/callbacks.py" />
         <option value="$PROJECT_DIR$/learn/config.py" />
         <option value="$PROJECT_DIR$/learn/result/output.txt" />
+        <option value="$PROJECT_DIR$/spider/handler.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="253" />
-    <option name="width" value="1680" />
-    <option name="height" value="950" />
+    <option name="x" value="140" />
+    <option name="y" value="34" />
+    <option name="width" value="1329" />
+    <option name="height" value="938" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -229,6 +229,11 @@
               <item name="Python_Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="Python_Server" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="spider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,23 +400,23 @@
       <workItem from="1578029683535" duration="592000" />
       <workItem from="1578030315417" duration="4414000" />
       <workItem from="1583845035309" duration="8773000" />
-      <workItem from="1584154937780" duration="4614000" />
+      <workItem from="1584154937780" duration="7828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18393000" />
+    <option name="totallyTimeSpent" value="21607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="950" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16910867" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22771673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.495338" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34149185" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -586,25 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/layers/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3566">
-          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding>
-            <element signature="e#24#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/layers/folding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/layers/attention.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -652,18 +638,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/learn/result/output.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/learn/result/result.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="525">
+            <caret line="25" selection-end-line="25" />
+          </first_editor>
           <second_editor>
             <markdownNavigatorState />
           </second_editor>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/result/output.txt">
+    <entry file="file://$PROJECT_DIR$/learn/layers/folding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#25#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/handler">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/layers/callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+          <folding>
+            <element signature="e#24#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spider/handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

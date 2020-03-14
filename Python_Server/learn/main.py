@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import codecs
-import os
 
 import keras.backend.tensorflow_backend as ktf
 import tensorflow as tf
