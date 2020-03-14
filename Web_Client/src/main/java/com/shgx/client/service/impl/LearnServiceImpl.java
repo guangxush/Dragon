@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class LearnServiceImpl implements LearnService {
 
-    private final ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+    private final ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
             .usePlaintext(true)
             .build();
     private final MachineLearningGrpc.MachineLearningBlockingStub blockingStub = MachineLearningGrpc.newBlockingStub(channel);

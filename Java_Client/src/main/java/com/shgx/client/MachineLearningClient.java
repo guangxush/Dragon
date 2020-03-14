@@ -58,7 +58,7 @@ public class MachineLearningClient {
      * Machine Learning server. If provided, the first element of {@code args} is the param to send to server.
      */
     public static void main(String[] args) throws Exception {
-        MachineLearningClient client = new MachineLearningClient("localhost", 50051);
+        MachineLearningClient client = new MachineLearningClient("localhost", 50052);
         try {
 
             String param = "train";

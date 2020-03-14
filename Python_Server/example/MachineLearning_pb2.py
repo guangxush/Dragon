@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='example',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x15MachineLearning.proto\x12\x07\x65xample\"\x1c\n\x0bSendRequest\x12\r\n\x05param\x18\x01 \x01(\t\"\x1a\n\x08GetReply\x12\x0e\n\x06result\x18\x01 \x01(\t2J\n\x0fMachineLearning\x12\x37\n\nStartLearn\x12\x14.example.SendRequest\x1a\x11.example.GetReply\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x15MachineLearning.proto\x12\x07\x65xample\"\x1b\n\x0bSendRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1b\n\x08GetReply\x12\x0f\n\x07message\x18\x01 \x01(\t2J\n\x0fMachineLearning\x12\x37\n\nStartLearn\x12\x14.example.SendRequest\x1a\x11.example.GetReply\"\x00\x62\x06proto3')
 )
 
 
@@ -34,7 +34,7 @@ _SENDREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='param', full_name='example.SendRequest.param', index=0,
+      name='name', full_name='example.SendRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -53,7 +53,7 @@ _SENDREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=62,
+  serialized_end=61,
 )
 
 
@@ -65,7 +65,7 @@ _GETREPLY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='example.GetReply.result', index=0,
+      name='message', full_name='example.GetReply.message', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -83,7 +83,7 @@ _GETREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=64,
+  serialized_start=63,
   serialized_end=90,
 )
 

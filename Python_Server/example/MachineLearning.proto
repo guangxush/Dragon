@@ -9,10 +9,10 @@ service MachineLearning {
 
 // The request message containing the params.
 message SendRequest {
-  string param = 1;
+  string name = 1;
 }
 
 // The response message containing the results
 message GetReply {
-  string result = 1;
+  string message = 1;
 }

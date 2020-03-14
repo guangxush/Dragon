@@ -19,7 +19,7 @@ class MachineLearning(MachineLearning_pb2_grpc.MachineLearningServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     MachineLearning_pb2_grpc.add_MachineLearningServicer_to_server(MachineLearning(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:50052')
     server.start()
     try:
         while True:

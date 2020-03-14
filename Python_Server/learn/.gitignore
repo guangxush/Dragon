@@ -141,17 +141,5 @@ pyvenv.cfg
 .venv
 pip-selfcheck.json
 
-
-chapter01/data
-chapter01/models
-chapter01/corpus
-chapter02/data
-chapter02/models
-chapter02/corpus
-chapter03/data
-chapter03/models
-chapter04/data
-chapter04/models
-chapter04/corpus
-chapter05/data
-chapter05/models
+/data
+/model
