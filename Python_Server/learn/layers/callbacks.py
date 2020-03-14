@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 from keras.preprocessing.sequence import pad_sequences
 from sklearn.metrics import f1_score, precision_score, recall_score, classification_report
-from chapter01.util.evaluate_score import score
+from util.evaluate_score import score
 
 
 class BertF1Metrics(Callback):

@@ -34,8 +34,8 @@ class Config(object):
         self.max_len_char = 20
         self.label1_size = 13
         self.label2_size = 40
-        self.label_size = 67
-        self.vocab_len_word = 4536
+        self.label_size = 14
+        self.vocab_len_word = 22512
         self.vocab_len_char = 3541
         self.char_per_word = 5
         self.embedding_path = "data"

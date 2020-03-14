@@ -5,15 +5,15 @@ from keras.layers import Embedding, Conv1D, MaxPooling1D, Flatten, Lambda, LSTM,
     concatenate, TimeDistributed, GlobalMaxPooling1D, Dropout, BatchNormalization, SpatialDropout1D, \
     Bidirectional, GRU, ZeroPadding1D, ReLU, Activation, Masking, GlobalAveragePooling1D, Add, MaxPool1D
 from keras.models import Model
-from chapter01.layers.callbacks import F1Metrics, SeqF1Metrics, BertF1Metrics, Log
+from layers.callbacks import F1Metrics, SeqF1Metrics, BertF1Metrics, Log
 from keras.callbacks import ModelCheckpoint, EarlyStopping, Callback
 from keras_bert import load_trained_model_from_checkpoint, Tokenizer
 import numpy as np
-from chapter01.callbacks.ensemble import *
-from chapter01.util.evaluate_score import score
-from chapter01.layers.kmaxpooling import KMaxPooling
-from chapter01.layers.folding import Folding
-from chapter01.layers.attention import SelfAttention
+from callbacks.ensemble import *
+from util.evaluate_score import score
+from layers.kmaxpooling import KMaxPooling
+from layers.folding import Folding
+from layers.attention import SelfAttention
 
 
 class LanguageModel:

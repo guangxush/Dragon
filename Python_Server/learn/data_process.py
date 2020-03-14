@@ -64,19 +64,19 @@ def build_word_level_corpus_all(train_file, valid_file=None, test_file=None):
     with codecs.open(train_file, "r", encoding="utf8") as f_train:
         for line in f_train:
             x = json.loads(line)
-            sentences.extend([x['content'].strip()])
+            sentences.extend([x['title'].strip()])
 
     if valid_file:
         with codecs.open(valid_file, encoding='utf-8') as f_valid:
             for line in f_valid:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
 
     if test_file:
         with codecs.open(test_file, encoding='utf-8') as f_test:
             for line in f_test:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
 
     target_lines = [' '.join(jieba.cut(sentence)) + '\n' for sentence in sentences]
 
@@ -90,19 +90,19 @@ def build_char_level_corpus_all(train_file, valid_file=None, test_file=None):
     with codecs.open(train_file, encoding='utf-8') as f_train:
         for line in f_train:
             x = json.loads(line)
-            sentences.extend([x['content'].strip()])
+            sentences.extend([x['title'].strip()])
 
     if valid_file:
         with codecs.open(valid_file, encoding='utf-8') as f_valid:
             for line in f_valid:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
 
     if test_file:
         with codecs.open(test_file, encoding='utf-8') as f_test:
             for line in f_test:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
 
     target_lines = list()
     for sentence in sentences:
@@ -118,17 +118,17 @@ def build_word_level_vocabulary_all(train_file, valid_file=None, test_file=None)
     with codecs.open(train_file, encoding='utf-8') as f_train:
         for line in f_train:
             x = json.loads(line)
-            sentences.extend([x['content'].strip()])
+            sentences.extend([x['title'].strip()])
     if valid_file:
         with codecs.open(valid_file, encoding='utf-8') as f_valid:
             for line in f_valid:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
     if test_file:
         with codecs.open(test_file, encoding='utf-8') as f_test:
             for line in f_test:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
     corpus = u''.join(sentences)
     word_list = list(set([tk[0] for tk in jieba.tokenize(corpus)]))
     return dict((word, idx+1) for idx, word in enumerate(word_list))
@@ -140,17 +140,17 @@ def build_char_level_vocabulary_all(train_file, valid_file=None, test_file=None)
     with codecs.open(train_file, encoding='utf-8') as f_train:
         for line in f_train:
             x = json.loads(line)
-            sentences.extend([x['content'].strip()])
+            sentences.extend([x['title'].strip()])
     if valid_file:
         with codecs.open(valid_file, encoding='utf-8') as f_valid:
             for line in f_valid:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
     if test_file:
         with codecs.open(test_file, encoding='utf-8') as f_test:
             for line in f_test:
                 x = json.loads(line)
-                sentences.extend([x['content'].strip()])
+                sentences.extend([x['title'].strip()])
 
     corpus = u''.join(sentences)
     char_list = list(set([char for char in corpus]))
@@ -159,15 +159,14 @@ def build_char_level_vocabulary_all(train_file, valid_file=None, test_file=None)
 
 
 # 生成单任务标签
-def generate_single_tags(train_file, valid_file=None, test_file=None):
+def generate_label(train_file, valid_file=None, test_file=None):
     tags = set()
     with codecs.open(train_file, encoding='utf-8') as f_train:
         for line in f_train:
             x = json.loads(line)
             try:
-                action = x['intents'][0]['action']['value'].strip()
-                target = x['intents'][0]['target']['value'].strip()
-                tags.add(action + '-' + target)
+                label = x['label'].strip()
+                tags.add(label)
             except (IndexError, KeyError):
                 continue
     if valid_file:
@@ -175,9 +174,8 @@ def generate_single_tags(train_file, valid_file=None, test_file=None):
             for line in f_valid:
                 x = json.loads(line)
                 try:
-                    action = x['intents'][0]['action']['value'].strip()
-                    target = x['intents'][0]['target']['value'].strip()
-                    tags.add(action + '-' + target)
+                    label = x['label'].strip()
+                    tags.add(label)
                 except (IndexError, KeyError):
                     continue
     if test_file:
@@ -185,9 +183,8 @@ def generate_single_tags(train_file, valid_file=None, test_file=None):
             for line in f_test:
                 x = json.loads(line)
                 try:
-                    action = x['intents'][0]['action']['value'].strip()
-                    target = x['intents'][0]['target']['value'].strip()
-                    tags.add(action + '-' + target)
+                    label = x['label'].strip()
+                    tags.add(label)
                 except IndexError:
                     continue
 
@@ -201,11 +198,11 @@ def generate_single_tags(train_file, valid_file=None, test_file=None):
 
 if __name__ == '__main__':
 
-    generate_single_tags('data/train_data.txt', valid_file='data/test_data.txt')
+    generate_label('data/train_data.txt', valid_file='data/test_data.txt')
     vocab = build_word_level_vocabulary_all('data/train_data.txt')
     with open('data/word_level/vocabulary_all.pkl', 'wb') as vocabulary_pkl:
         pickle.dump(vocab, vocabulary_pkl, -1)
-        print(len(vocab))  # 6046
+        print(len(vocab))
     build_word_level_corpus_all('data/train_data.txt')
     generate_embedding('word')
     # generate_fasttext_embedding('word')
@@ -213,11 +210,11 @@ if __name__ == '__main__':
     vocab = build_char_level_vocabulary_all('data/train_data.txt')
     with open('data/char_level/vocabulary_all.pkl', 'wb') as vocabulary_pkl:
         pickle.dump(vocab, vocabulary_pkl, -1)
-        print(len(vocab))  # 1961
+        print(len(vocab))
     build_char_level_corpus_all('data/train_data.txt')
     generate_embedding('char')
     # generate_fasttext_embedding('char')
 
     with open('data/bert_level/vocabulary_all.pkl', 'wb') as vocabulary_pkl:
         pickle.dump(vocab, vocabulary_pkl, -1)
-        print(len(vocab))  # 1541
+        print(len(vocab))

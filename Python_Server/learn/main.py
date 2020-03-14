@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 import codecs
+import os
 
 import keras.backend.tensorflow_backend as ktf
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-from chapter01.models import *
+from models import *
 
-from chapter01.config import Config
-from chapter01.load_data import load_word_data, load_char_data, load_bert_data
+from config import Config
+from load_data import load_word_data, load_char_data, load_bert_data
 
 train = True
 level = 'word'
-label_level = 'single'
 fasttext = False
 overwrite = False
 swa = False
@@ -27,19 +27,17 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 def get_train_data(train_file=None, test_file=None):
     if level == 'word':
-        x_sent, x_label, id2tags, vocabulary = load_word_data(train_file, label_level=label_level)
-        x_valid_sent, x_valid_label, _, _ = load_word_data(test_file, label_level=label_level)
+        x_sent, x_label, id2tags, vocabulary = load_word_data(train_file)
+        x_valid_sent, x_valid_label, _, _ = load_word_data(test_file)
         return [x_sent, x_label], [x_valid_sent, x_valid_label], id2tags
     elif level == 'char':
-        x_sent, x_sent_char, x_label, id2tags, vocabulary_char = load_char_data(train_file,
-                                                                                label_level=label_level)
-        x_valid_sent, x_valid_sent_char, x_valid_label, _, _ = load_char_data(test_file,
-                                                                              label_level=label_level)
+        x_sent, x_sent_char, x_label, id2tags, vocabulary_char = load_char_data(train_file)
+        x_valid_sent, x_valid_sent_char, x_valid_label, _, _ = load_char_data(test_file)
         return [x_sent, x_sent_char, x_label], [x_valid_sent, x_valid_sent_char,
                                                 x_valid_label], id2tags
     elif level == 'bert':
-        x_sent_ids, x_sent_segments, x_label, id2tags = load_bert_data(train_file, label_level=label_level)
-        x_valid_sent_ids, x_valid_sent_segments, x_valid_label, _ = load_bert_data(test_file, label_level=label_level)
+        x_sent_ids, x_sent_segments, x_label, id2tags = load_bert_data(train_file)
+        x_valid_sent_ids, x_valid_sent_segments, x_valid_label, _ = load_bert_data(test_file)
         return [x_sent_ids, x_sent_segments, x_label], [x_valid_sent_ids, x_valid_sent_segments,
                                                         x_valid_label], id2tags
     else:
@@ -48,14 +46,13 @@ def get_train_data(train_file=None, test_file=None):
 
 def get_test_data(test_file=None):
     if level == 'word':
-        x_test_sent, _, id2tags, vocabulary = load_word_data(test_file, label_level=label_level, train=False)
+        x_test_sent, _, id2tags, vocabulary = load_word_data(test_file, train=False)
         return x_test_sent, id2tags
     elif level == 'char':
-        x_test_sent, x_test_sent_char, _, id2tags, vocabulary_char = load_char_data(test_file, label_level=label_level,
-                                                                                    train=False)
+        x_test_sent, x_test_sent_char, _, id2tags, vocabulary_char = load_char_data(test_file, train=False)
         return [x_test_sent, x_test_sent_char], id2tags
     elif level == 'bert':
-        x_test_ids, x_test_segments, x_label, id2tags = load_bert_data(test_file, label_level=label_level, train=False)
+        x_test_ids, x_test_segments, x_label, id2tags = load_bert_data(test_file, train=False)
         return [x_test_ids, x_test_segments], id2tags
     else:
         return None
