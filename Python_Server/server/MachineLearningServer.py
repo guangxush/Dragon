@@ -5,6 +5,7 @@ import time
 import grpc
 from concurrent import futures
 from example import MachineLearning_pb2, MachineLearning_pb2_grpc
+from learn.main import train, test
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -13,6 +14,12 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 class MachineLearning(MachineLearning_pb2_grpc.MachineLearningServicer):
 
     def StartLearn(self, request, context):
+        if request.name == 'train':
+            train()
+        elif request.name == 'test':
+            test()
+        else:
+            pass
         return MachineLearning_pb2.GetReply(message='The model is %sing!' % request.name)
 
 
