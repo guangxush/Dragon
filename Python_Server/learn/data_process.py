@@ -12,6 +12,7 @@ from gensim.models import Word2Vec
 from gensim.models.word2vec import LineSentence
 
 
+# 文本数据向量化
 def generate_embedding(level):
     data_path = 'data/%s_level' % level
 

@@ -186,18 +186,17 @@ class Test(object):
                 f.write(str(self.id2tags[result]) + "\n")
 
 
-def train():
-    train_data, valid_data, id2tags = get_train_data('data/train_data.txt', 'data/test_data.txt')
-    train = Train(train_data, valid_data, id2tags, model_name=model_name)
-    train.train()
-    return
-
-
-def test():
-    test_data, id2tags = get_test_data('data/test_data.txt')
-    test = Test(test_data, id2tags, model_name=model_name)
-    test.test()
-    return
+def controller(train):
+    if train == 'train':
+        train_data, valid_data, id2tags = get_train_data('data/train_data.txt', 'data/test_data.txt')
+        train = Train(train_data, valid_data, id2tags, model_name=model_name)
+        train.train()
+    elif train == 'test':
+        test_data, id2tags = get_test_data('data/test_data.txt')
+        test = Test(test_data, id2tags, model_name=model_name)
+        test.test()
+    else:
+        return
 
 
 if __name__ == '__main__':

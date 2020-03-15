@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
+# 配置文件
 class Config(object):
     def __init__(self):
         self.level = "word"

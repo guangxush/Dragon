@@ -11,6 +11,7 @@ from config import Config
 from util.utils import pad
 
 
+# 数据转换
 def load_tags(tag_file):
     tags2id = {}
     id2tags = {}

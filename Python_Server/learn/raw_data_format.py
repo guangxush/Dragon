@@ -3,6 +3,7 @@ import codecs
 import json
 
 
+# 生成json格式的数据
 def generate_data(file_input, file_output, corpus_output):
     print("******* " + file_input + " process start *******")
     fr = codecs.open(file_input, 'r', encoding='utf-8')
@@ -25,6 +26,7 @@ def generate_data(file_input, file_output, corpus_output):
     print("******* " + file_input + " process end *******")
 
 
+# 划分数据为训练集和验证集
 def divide_data(input_file, train_file, test_file):
     print("******* " + input_file + " divide start *******")
     fr = codecs.open(input_file, 'r', encoding='utf-8')

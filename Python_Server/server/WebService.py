@@ -3,6 +3,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
+# 路由的方式调用服务
+
 
 @app.route('/')
 def index():

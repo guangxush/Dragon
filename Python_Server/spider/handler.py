@@ -2,6 +2,7 @@ from pyquery import PyQuery as pq
 import urllib.request
 
 
+#  人民网新闻标题爬取
 def handler():
     # 设置需要爬取的网站地址
     response = urllib.request.urlopen('http://politics.people.com.cn/')
@@ -18,7 +19,9 @@ def handler():
         # 爬取10条新闻
         for i in range(1, 11):
             # 通过F12，查找要爬取信息的selector，通过观察我们将要爬取的10条信息的id传入selector中进行遍历爬取
-            element = doc('body > div.w1000.mt20.column_2.p9_con > div.left.w655 > div:nth-child(3) > div:nth-child({}) > div > h5 > a'.format(i))
+            element = doc(
+                'body > div.w1000.mt20.column_2.p9_con > div.left.w655 > div:nth-child(3) > div:nth-child({}) > div > h5 > a'.format(
+                    i))
             # 获取新闻标题
             title = element.text()
             print(title)
